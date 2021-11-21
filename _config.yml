@@ -1,0 +1,282 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Tunis - Personal Portfolio
+email: ducorteam@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://127.0.0.1:4000" # the base hostname & protocol for your site, e.g. http://example.com
+
+# jekyll paginate
+paginate: 6
+paginate_path: "/blog/page:num/"
+permalink: /blog/:title:output_ext
+
+#plugin
+plugins:
+  - jekyll-feed
+
+#Disqus is a global comment system
+disqus_shortname: #https://disqus.com/
+
+#analytics
+google_analytics: #https://analytics.google.com/
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - bin/
+  - docs/
+
+#########################################################################################
+############################ template content/page ######################################
+#########################################################################################
+
+# pageClass define menus active or not
+#menus
+menus:
+  - url: "/"
+    title: Home
+    iconClass: 'fa fa-home'
+    pageClass: home
+  - url: "about.html"
+    title: About
+    iconClass: 'fa fa-user'
+    pageClass: about
+  - url: "portfolio.html"
+    title: Portfolio
+    iconClass: 'fa fa-folder-open'
+    pageClass: portfolio
+  - url: "contact.html"
+    title: Contact
+    iconClass: 'fa fa-envelope-open'
+    pageClass: contact
+  - url: "blog/"
+    title: Blog
+    iconClass: 'fa fa-comments'
+    pageClass: blog
+
+#home
+home:
+  my_picture: img/img-mobile.jpg
+  title: "I'm lucy milner.<span>web designer</span>"
+  description: "I'm a Tunisian based web designer & front‑end developer focused on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me."
+  button-text: 'more about me'
+  button-link: "/about"
+#about
+about:
+  page-title: 'ABOUT <span>ME</span>'
+  page-bg: 'Resume'
+  personal-infos: personal infos
+  first-name: Lucy
+  last-name : Milner
+  age : 27 Years
+  nationality : Tunisian
+  freelance : Available
+  address : Tunis
+  phone : '+21621184010'
+  email : you@mail.com
+  skype : lucy.milner
+  langages : French, English
+  #download cv link
+  cv-download-text: 'Download CV'
+  cv-download-link: "#"
+  
+  #Boxes Starts
+  boxesStarts:
+    - count:  12 
+      description: 'years of <span class="d-block">experience</span>' 
+    - count: 97
+      description: 'completed <span class="d-block">projects</span>' 
+    - count: 81
+      description: 'Happy<span class="d-block">customers</span>' 
+    - count: 53
+      description: 'awards <span class="d-block">won</span>' 
+    
+
+skills:
+  - name:  html
+    percentage: 25
+  - name: javascript
+    percentage: 89
+  - name: css 
+    percentage: 70
+  - name: php 
+    percentage: 66
+  - name: wordpress 
+    percentage: 95
+  - name: jquery 
+    percentage: 50
+  - name: angular 
+    percentage: 65
+  - name: react 
+    percentage: 45
+
+#  EXPERIENCE & EDUCATION
+experience:
+  - date: 2018 - Present
+    title: 'Web Developer <span class="place open-sans-font">Envato</span> '
+    description: Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore adipisicing elit
+
+  - date: 2013 - 2018
+    title: 'UI/UX Designer <span class="place open-sans-font">Themeforest</span> '
+    description: Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit, tempor incididunt
+  
+  - date: 2005 - 2013
+    title: 'Consultant <span class="place open-sans-font">Videohive</span> '
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+
+education:
+  - date: 2015
+    title: 'Bachelor Degree <span class="place open-sans-font">Tunis High School</span>'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+  - date: 2012
+    title: 'Master Degree <span class="place open-sans-font">Kiev University</span>'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+  - date: 2009
+    title: 'Engineering Degree <span class="place open-sans-font">Oxford University</span>'
+    description: Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed do eiusmod tempor duntt
+
+
+# portfolio
+portfolios:
+  - title: Image Project
+    type: 'image'
+    image:  img/projects/project-1.jpg
+    project : Website
+    langages: 'HTML, CSS, Javascript'
+    client : Envato
+    preview : www.envato.com
+
+  - title: YOUTUBE PROJECT
+    type: youtube
+    image:  img/projects/project-2.jpg
+    url:  https://www.youtube.com/embed/7e90gBu4pas?enablejsapi=1&version=3&playerapiid=ytplayer
+    project : Video
+    langages: Adobe After Effects
+    client : Videohive
+    preview : www.videohive.net
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  img/projects/project-3.jpg
+    project : Video
+    langages: HTML, CSS, Javascript
+    client : Themeforest
+    preview : www.envato.com
+
+  - title: LOCAL VIDEO PROJECT
+    type: video
+    image:  img/projects/project-4.jpg
+    url:  img/projects/video.mp4
+    project : Video
+    langages: Adobe Premium
+    client : Videohive
+    preview : www.envato.com
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  img/projects/project-5.jpg
+    project : Website
+    langages: HTML, CSS, Javascript
+    client :  Envato
+    preview : www.envato.com
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  img/projects/project-6.jpg
+    project : Website
+    langages: HTML, CSS, Javascript
+    client :  Envato
+    preview : www.envato.com
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  img/projects/project-7.jpg
+    project : Website
+    langages: HTML, CSS, Javascript
+    client :  Envato
+    preview : www.envato.com
+
+  - title: IMAGE PROJECT
+    type: image
+    image:  img/projects/project-8.jpg
+    project : Website
+    langages: HTML, CSS, Javascript
+    client :  Envato
+    preview : www.envato.com
+
+  - title: IMAGE PROJECT
+    type: image
+    image: img/projects/project-9.jpg
+    project : Website
+    langages: HTML, CSS, Javascript
+    client :  Envato
+    preview : www.envato.com
+
+
+#contact page
+contract:
+  page-title: 'get in <span>touch</span>'
+  page-bg: contact
+  info: "DON'T BE SHY !"
+  description: "Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions."
+
+  mail-text: 'MAIL ME'
+  mail: 'lucy@mail.com '
+  phone-text: 'call me'
+  phone: '+216 21 184 010'
+
+  socials:
+    - link: "#"
+      icon: fa fa-facebook
+      name: facebook
+      
+    - link: "#"
+      icon: fa fa-twitter
+      name: twitter
+      
+    - link: "#"
+      icon: fa fa-youtube
+      name: youtube
+      
+    - link: "#"
+      icon: fa fa-dribbble
+      name: dribbble
+

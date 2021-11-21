@@ -1,0 +1,25 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+pageClass: home
+---
+
+<section class="container-fluid main-container container-home p-0 revealator-slideup revealator-once revealator-delay1">
+    <div class="color-block d-none d-lg-block"></div>
+    <div class="row home-details-container align-items-center">
+        <div class="col-lg-4 bg position-fixed d-none d-lg-block"></div>
+        <div class="col-12 col-lg-8 offset-lg-4 home-details text-left text-sm-center text-lg-left">
+            <div>
+                <img src="{{ site.home.my_picture }}" class="img-fluid main-img-mobile d-none d-sm-block d-lg-none" alt="my picture" />
+                <h1 class="text-uppercase poppins-font">{{ site.home.title }}</h1>
+                <p class="open-sans-font">{{ site.home.description }}</p>
+                <a class="button" href="{{ site.home.button-link }}">
+                    <span class="button-text">{{ site.home.button-text }}</span>
+                    <span class="button-icon fa fa-arrow-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

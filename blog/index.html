@@ -1,0 +1,89 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+pageClass: blog
+---
+<!-- Page Title Starts -->
+<section class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1">
+    <h1>my <span>blog</span></h1>
+    <span class="title-bg">posts</span>
+</section>
+<!-- Page Title Ends -->
+<!-- Main Content Starts -->
+<section class="main-content revealator-slideup revealator-once revealator-delay1">
+    <div class="container">
+        <!-- Articles Starts -->
+        <div class="row">
+            {%- for post in paginator.posts -%}
+            <!-- Article Starts -->
+            <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-30">
+                <article class="post-container">
+                    <div class="post-thumb">
+                        <a href="{{post.url}}" class="d-block position-relative overflow-hidden">
+                            <img src="{{post.image | absolute_url }}" class="img-fluid" alt="{{post.title}} Post">
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <div class="entry-header">
+                            <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                        </div>
+                        <div class="entry-content open-sans-font">
+                            <p>{{post.description}}</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <!-- Article Ends -->
+            {%- endfor -%}
+
+           
+            <!-- Pagination Starts -->
+            <div class="col-12 mt-4">
+                <nav class="Page navigation example">
+                    <ul class="pagination justify-content-center mb-0">
+                        {% if paginator.previous_page %}
+                            {% if paginator.previous_page == 1 %}
+                                <li class="page-item"><a class="page-link" href="/blog">&laquo;</a></a>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="/blog/page/{{ paginator.previous_page }}">&laquo;</a></li>
+                            {% endif %}
+                        {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+                        {% endif %}
+            
+                        {% for i in (1..paginator.total_pages) %}
+                            {% if i == 1 %}
+                                {% if paginator.page == i %}
+                                    <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="/">{{ i }}</a></li>
+                                {% endif %}
+                            {% else %}
+                                {% if paginator.page == i %}
+                                    <li class="page-item active"><a class="page-link" href="#">{{ i }}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="/blog/page/{{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+            
+                        {% if paginator.next_page %}
+                            <li class="page-item"><a class="page-link" href="/blog/page/{{ paginator.next_page }}">&raquo;</a></li>
+                        {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#">&raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+
+  
+
+            <!-- Pagination Ends -->
+        </div>
+        <!-- Articles Ends -->
+    </div>
+
+</section>
